@@ -29,9 +29,6 @@
     }
 </style>
 
-<h3>
-
-
 <div class="horizontal-menu">
     <a href="produtos.php?acao=1">Cupcake</a>
     <a href="produtos.php?acao=2">Chocolate</a>
@@ -43,7 +40,7 @@
         <input type="submit" value="Buscar">
     </form>
 
-</div>
+
 
 <?php
     if(isset($_GET['erro']) and $_GET['erro']==1){
@@ -51,11 +48,28 @@
 }
 ?>
 
+
+<?php
+    if(!isset($_SESSION['nome'])){
+?>
+
+
 <form action="valida.php" method="post">
     <input type="text" name="login" placeholder="Nome de Usuário">
     <input type="password" name="senha" placeholder="Digite sua senha">
     <input type="submit" value="Entrar">
 </form>
+</div>
+
+<?php
+    }else{
+?>
+
+<p><a href="logout.php">Sair</a></p>
+
+<?php
+    }
+?>
 
 </body>
 </html>
